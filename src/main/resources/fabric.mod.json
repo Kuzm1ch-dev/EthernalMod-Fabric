@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "ethernalmod",
   "version": "${version}",
 
   "name": "Example Mod",
@@ -14,16 +14,16 @@
   },
 
   "license": "CC0-1.0",
-  "icon": "assets/modid/icon.png",
+  "icon": "assets/ethernalmod/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.fabricmc.example.ExampleMod"
+      "ru.kuzm1ch88.ethernalmod.EthernalMod"
     ]
   },
   "mixins": [
-    "modid.mixins.json"
+    "ethernalmod.mixins.json"
   ],
 
   "depends": {
