@@ -1,0 +1,27 @@
+{
+  "item.ethernalmod.raw_tin": "Raw Tin",
+  "item.ethernalmod.raw_cold_iron": "Raw Cold Iron",
+  "item.ethernalmod.raw_aumentit": "Raw Aumentit",
+
+  "item.ethernalmod.aumentit_ingot": "Aumentit Ingot",
+  "item.ethernalmod.alaty_stone": "Alaty Stone",
+  "item.ethernalmod.cold_iron_ingot": "Cold Iron Ingot",
+  "item.ethernalmod.bronze_ingot": "Bronze Ingot",
+  "item.ethernalmod.tin_ingot": "Tin Ingot",
+
+  "item.ethernalmod.fabric": "Fabric",
+  "item.ethernalmod.golden_string": "Golden String",
+  "item.ethernalmod.golden_fabric": "Golden Fabric",
+
+  "block.ethernalmod.bronze_block": "Bronze Block",
+  "block.ethernalmod.tin_block": "Tin Block",
+  "block.ethernalmod.cold_iron_block": "Cold Iron Block",
+  "block.ethernalmod.alaty_stone_block": "Alaty Stone Block",
+
+  "block.ethernalmod.aumentit_ore": "Aumentit Ore",
+  "block.ethernalmod.tin_ore": "Tin Ore",
+  "block.ethernalmod.alaty_stone_ore": "Alaty Stone Ore",
+  "block.ethernalmod.cold_iron_ore": "Cold Iron Ore",
+
+  "itemGroup.ethernalmod.mythril": "Ethernal Tab"
+}

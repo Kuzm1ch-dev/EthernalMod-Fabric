@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " # ",
+    "#x#",
+    " # "
+  ],
+  "key": {
+    "#": {
+      "item": "ethernalmod:golden_string"
+    },
+    "X": {
+      "item": "ethernalmod:fabric"
+    }
+  },
+  "result": {
+    "item": "ethernalmod:golden_fabric"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "ethernalmod:tin_ore",
+    "ethernalmod:tin_block",
+    "ethernalmod:bronze_block",
+    "ethernalmod:alaty_stone_ore",
+    "ethernalmod:alaty_stone_block"
+  ]
+}

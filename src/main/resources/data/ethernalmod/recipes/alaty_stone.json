@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "ethernalmod:alaty_stone_block"
+    }
+  ],
+  "result": {
+    "item": "ethernalmod:alaty_stone",
+    "count": 9
+  }
+}
