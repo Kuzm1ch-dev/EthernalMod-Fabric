@@ -2,6 +2,7 @@
   "replace": false,
   "values": [
     "ethernalmod:cold_iron_ore",
-    "ethernalmod:cold_iron_block"
+    "ethernalmod:cold_iron_block",
+    "ethernalmod:aumentit_ore"
   ]
 }
