@@ -24,7 +24,7 @@ public class HolyBible extends Item {
 
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-        tooltip.add((Text.literal("item.ethernalmod.holy_bible.tooltip").formatted(Formatting.YELLOW)));
+        tooltip.add((Text.translatable("item.ethernalmod.holy_bible.tooltip").formatted(Formatting.YELLOW)));
         super.appendTooltip(stack, world, tooltip, context);
     }
 }

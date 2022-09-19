@@ -23,7 +23,7 @@ public class HolyCross extends Item {
         if (Screen.hasShiftDown()){
             tooltip.add((Text.literal("Traditionally, it is a religious symbol of Christianity and an object of religious veneration in a number of Christian denominations. The cross is made of pure gold. Clearly worth a lot!").formatted(Formatting.YELLOW)));
         }else{
-            tooltip.add((Text.literal("Press Shift for more info!").formatted(Formatting.YELLOW)));
+            tooltip.add((Text.translatable("item.ethernalmod.holy_cross.tooltip").formatted(Formatting.YELLOW)));
         }
 
 

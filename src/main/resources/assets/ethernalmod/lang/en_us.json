@@ -53,9 +53,10 @@
 
 
   "item.ethernalmod.holy_bible": "Holy Bible",
-  "item.ethernalmod.holy_bible.tooltip": "Original collection of texts that \nare sacred in Judaism and Christianity\n and constitute the Holy Scriptures in these\n religions. Merchants are ready to\n give their soul for this!",
+  "item.ethernalmod.holy_bible.tooltip": "Merchants are ready to give their soul for this!",
 
   "item.ethernalmod.holy_cross": "Holy Cross",
+  "item.ethernalmod.holy_cross.tooltip": "Press Shift for more info!",
 
   "itemGroup.ethernalmod.ethernal_resource": "Ethernal Resources",
   "itemGroup.ethernalmod.ethernal_food": "Ethernal Food",
