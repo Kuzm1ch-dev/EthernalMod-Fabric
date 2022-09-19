@@ -45,5 +45,21 @@
   "block.ethernalmod.alaty_stone_ore": "Alaty Stone Ore",
   "block.ethernalmod.cold_iron_ore": "Cold Iron Ore",
 
-  "itemGroup.ethernalmod.ethernal": "Ethernal Tab"
+  "item.ethernalmod.piece_of_cheese": "Piece Of Cheese",
+  "item.ethernalmod.garlic": "Garlic",
+  "item.ethernalmod.onion": "Onion",
+  "item.ethernalmod.radish": "Radish",
+  "item.ethernalmod.rutabaga": "Rutabaga",
+
+
+  "item.ethernalmod.holy_bible": "Holy Bible",
+  "item.ethernalmod.holy_bible.tooltip": "Original collection of texts that \nare sacred in Judaism and Christianity\n and constitute the Holy Scriptures in these\n religions. Merchants are ready to\n give their soul for this!",
+
+  "item.ethernalmod.holy_cross": "Holy Cross",
+
+  "itemGroup.ethernalmod.ethernal_resource": "Ethernal Resources",
+  "itemGroup.ethernalmod.ethernal_food": "Ethernal Food",
+  "itemGroup.ethernalmod.ethernal_weapon": "Ethernal Weapons",
+  "itemGroup.ethernalmod.ethernal_artifact": "Ethernal Artifacts"
+
 }
