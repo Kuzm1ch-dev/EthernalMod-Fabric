@@ -20,6 +20,9 @@
   "entrypoints": {
     "main": [
       "ru.kuzm1ch88.ethernalmod.EthernalMod"
+    ],
+    "client": [
+      "ru.kuzm1ch88.ethernalmod.EthernalModClient"
     ]
   },
   "mixins": [

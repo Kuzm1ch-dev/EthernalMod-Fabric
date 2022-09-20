@@ -3,6 +3,7 @@ package ru.kuzm1ch88.ethernalmod.block;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.Material;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -10,6 +11,7 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import ru.kuzm1ch88.ethernalmod.EthernalMod;
+import ru.kuzm1ch88.ethernalmod.block.custom.OnionCrop;
 import ru.kuzm1ch88.ethernalmod.item.ModItemsGroup;
 
 public class ModBlocks {
@@ -60,6 +62,16 @@ public class ModBlocks {
 
     public static Block ALATY_STONE_BLOCK = registerBlock("alaty_stone_block",
             new Block(FabricBlockSettings.of(Material.STONE).strength(1f).requiresTool()),ModItemsGroup.ETHERNAL_RESOURCE);
+
+    // Crop's
+
+    public static Block ONION_CROP = registerBlockWithoutItem("onion_crop",
+            new OnionCrop(FabricBlockSettings.copy(Blocks.WHEAT)));
+
+
+    private static Block registerBlockWithoutItem(String name, Block block){
+        return Registry.register(Registry.BLOCK, new Identifier(EthernalMod.MOD_ID, name), block);
+    }
     private static Block registerBlock(String name, Block block,  ItemGroup tab){
         registerBlockItem(name, block, tab);
         return Registry.register(Registry.BLOCK, new Identifier(EthernalMod.MOD_ID, name), block);

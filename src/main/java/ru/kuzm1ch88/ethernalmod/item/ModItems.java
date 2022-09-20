@@ -1,11 +1,13 @@
 package ru.kuzm1ch88.ethernalmod.item;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.minecraft.item.AliasedBlockItem;
 import net.minecraft.item.FoodComponent;
 import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import ru.kuzm1ch88.ethernalmod.EthernalMod;
+import ru.kuzm1ch88.ethernalmod.block.ModBlocks;
 import ru.kuzm1ch88.ethernalmod.item.custom.HolyBible;
 import ru.kuzm1ch88.ethernalmod.item.custom.HolyCross;
 
@@ -14,10 +16,10 @@ public class ModItems {
     //Artifacts
 
     public static final Item HOLY_BIBLE = registerItem("holy_bible",
-            new HolyBible(new FabricItemSettings().group(ModItemsGroup.ETHERNAL_ARTIFACT)));
+            new HolyBible(new FabricItemSettings().group(ModItemsGroup.ETHERNAL_ARTIFACT).maxCount(1)));
 
     public static final Item HOLY_CROSS = registerItem("holy_cross",
-            new HolyCross(new FabricItemSettings().group(ModItemsGroup.ETHERNAL_ARTIFACT)));
+            new HolyCross(new FabricItemSettings().group(ModItemsGroup.ETHERNAL_ARTIFACT).maxCount(1)));
 
     //Food's
 
@@ -25,7 +27,7 @@ public class ModItems {
             new Item(new FabricItemSettings().group(ModItemsGroup.ETHERNAL_FOOD).food(ModFoodComponents.RADISH)));
 
     public static final Item ONION = registerItem("onion",
-            new Item(new FabricItemSettings().group(ModItemsGroup.ETHERNAL_FOOD).food(ModFoodComponents.ONION)));
+            new AliasedBlockItem(ModBlocks.ONION_CROP, new FabricItemSettings().group(ModItemsGroup.ETHERNAL_FOOD).food(ModFoodComponents.ONION)));
 
     public static final Item GARLIC = registerItem("garlic",
             new Item(new FabricItemSettings().group(ModItemsGroup.ETHERNAL_FOOD).food(ModFoodComponents.GARLIC)));

@@ -20,7 +20,7 @@ public class HolyCross extends Item {
 
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-            tooltip.add((Text.translatable("item.ethernalmod.holy_cross.tooltip").formatted(Formatting.YELLOW)));
+        tooltip.add((Text.translatable("item.ethernalmod.holy_cross.tooltip").formatted(Formatting.YELLOW)));
         super.appendTooltip(stack, world, tooltip, context);
     }
 }

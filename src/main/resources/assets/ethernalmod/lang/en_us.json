@@ -56,7 +56,12 @@
   "item.ethernalmod.holy_bible.tooltip": "Merchants are ready to give their soul for this!",
 
   "item.ethernalmod.holy_cross": "Holy Cross",
-  "item.ethernalmod.holy_cross.tooltip": "Press Shift for more info!",
+  "item.ethernalmod.holy_cross.tooltip": "Merchants are ready to give their soul for this!",
+
+
+  "block.ethernalmod.onion_crop": "Onion Crop",
+
+  "entity.mincraft.villager.priest": "Christian Priest",
 
   "itemGroup.ethernalmod.ethernal_resource": "Ethernal Resources",
   "itemGroup.ethernalmod.ethernal_food": "Ethernal Food",
