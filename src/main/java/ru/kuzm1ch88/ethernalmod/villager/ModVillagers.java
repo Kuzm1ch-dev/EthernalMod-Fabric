@@ -89,5 +89,43 @@ public class ModVillagers {
                             6,  2,0.02f
                     )));
                 });
+
+
+        //Farmer
+        TradeOfferHelper.registerVillagerOffers(VillagerProfession.FARMER, 1,
+                factories -> {
+                    factories.add(((entity, random) -> new TradeOffer(
+                            new ItemStack(Items.EMERALD,1),
+                            new ItemStack(ModItems.ONION,4),
+                            6,  2,0.02f
+                    )));
+                });
+
+        TradeOfferHelper.registerVillagerOffers(VillagerProfession.FARMER, 1,
+                factories -> {
+                    factories.add(((entity, random) -> new TradeOffer(
+                            new ItemStack(Items.EMERALD,3),
+                            new ItemStack(ModItems.RADISH,4),
+                            6,  2,0.02f
+                    )));
+                });
+
+        TradeOfferHelper.registerVillagerOffers(VillagerProfession.FARMER, 1,
+                factories -> {
+                    factories.add(((entity, random) -> new TradeOffer(
+                            new ItemStack(Items.EMERALD,4),
+                            new ItemStack(ModItems.RUTABAGA,4),
+                            6,  2,0.02f
+                    )));
+                });
+
+        TradeOfferHelper.registerVillagerOffers(VillagerProfession.FARMER, 1,
+                factories -> {
+                    factories.add(((entity, random) -> new TradeOffer(
+                            new ItemStack(Items.EMERALD,8),
+                            new ItemStack(ModItems.GARLIC,4),
+                            6,  2,0.02f
+                    )));
+                });
     }
 }
