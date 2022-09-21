@@ -7,6 +7,8 @@ import ru.kuzm1ch88.ethernalmod.block.ModBlocks;
 import ru.kuzm1ch88.ethernalmod.item.ModItems;
 import ru.kuzm1ch88.ethernalmod.painting.ModPaintings;
 import ru.kuzm1ch88.ethernalmod.villager.ModVillagers;
+import ru.kuzm1ch88.ethernalmod.world.feature.ModConfiiguredFeatures;
+import ru.kuzm1ch88.ethernalmod.world.gen.ModOreGeneration;
 
 public class EthernalMod implements ModInitializer {
 	public static final String MOD_ID = "ethernalmod";
@@ -23,6 +25,10 @@ public class EthernalMod implements ModInitializer {
 		ModVillagers.registerTrades();
 
 		ModPaintings.registerPaintings();
+
+		ModConfiiguredFeatures.registerConfiguredFeatures();
+
+		ModOreGeneration.generateOre();
 
 		LOGGER.info("Ethernal Mod!");
 	}
