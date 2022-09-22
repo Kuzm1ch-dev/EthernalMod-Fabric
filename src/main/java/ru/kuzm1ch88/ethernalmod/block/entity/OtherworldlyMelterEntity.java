@@ -18,6 +18,7 @@ import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
+import ru.kuzm1ch88.ethernalmod.block.custom.OtherworldlyMelter;
 import ru.kuzm1ch88.ethernalmod.recipe.OtherWorldlyMelterRecipe;
 import ru.kuzm1ch88.ethernalmod.screen.OtherWorldlyMelterScreenHandler;
 
@@ -95,13 +96,16 @@ public class OtherworldlyMelterEntity extends BlockEntity implements NamedScreen
 
         if(hasRecipe(entity)) {
             entity.progress++;
-            state = (BlockState)state.with(AbstractFurnaceBlock.LIT, true);
+            state = (BlockState)state.with(OtherworldlyMelter.LIT, true);
+            world.setBlockState(blockPos, state, 3);
             markDirty(world, blockPos, state);
             if(entity.progress >= entity.maxProgress) {
                 craftItem(entity);
             }
         } else {
             entity.resetProgress();
+            state = (BlockState)state.with(OtherworldlyMelter.LIT, false);
+            world.setBlockState(blockPos, state, 3);
             markDirty(world, blockPos, state);
         }
     }
