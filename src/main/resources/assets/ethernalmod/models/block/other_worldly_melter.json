@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "front": "ethernalmod:block/other_worldly_melter_front",
+    "side": "ethernalmod:block/other_worldly_melter_side",
+    "top": "ethernalmod:block/other_worldly_melter_top"
+  }
+}

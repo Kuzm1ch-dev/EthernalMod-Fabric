@@ -1,0 +1,14 @@
+{
+  "type": "ethernalmod:otherworldly_melter",
+  "ingredients": [
+    {
+      "item": "ethernalmod:raw_cleomenis"
+    },
+    {
+      "item": "ethernalmod:raw_cleomenis"
+    }
+  ],
+  "output": {
+    "item": "ethernalmod:cleomenis_ingot"
+  }
+}
