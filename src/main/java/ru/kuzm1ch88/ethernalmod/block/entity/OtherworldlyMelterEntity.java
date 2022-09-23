@@ -22,6 +22,7 @@ import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.RegistryEntry;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
+import ru.kuzm1ch88.ethernalmod.block.ModBlocks;
 import ru.kuzm1ch88.ethernalmod.block.custom.OtherworldlyMelter;
 import ru.kuzm1ch88.ethernalmod.item.ModItems;
 import ru.kuzm1ch88.ethernalmod.recipe.OtherWorldlyMelterRecipe;
@@ -41,7 +42,8 @@ public class OtherworldlyMelterEntity extends BlockEntity implements NamedScreen
 
     public static Map<Item, Integer> createFuelTimeMap() {
         Map<Item, Integer> map = Maps.newLinkedHashMap();
-        addFuel(map, ModItems.ALATY_STONE, 100);
+        addFuel(map, ModItems.ALATY_STONE, 2000);
+        addFuel(map, ModBlocks.ALATY_STONE_BLOCK.asItem(), 18000);
         return map;
     }
 
@@ -142,7 +144,7 @@ public class OtherworldlyMelterEntity extends BlockEntity implements NamedScreen
             entity.removeStack(3, 1);
         }
 
-        if(hasRecipe(entity)) {
+        if(hasRecipe(entity) && entity.isBurning()) {
             entity.progress++;
             state = (BlockState)state.with(OtherworldlyMelter.LIT, true);
             world.setBlockState(blockPos, state, 3);

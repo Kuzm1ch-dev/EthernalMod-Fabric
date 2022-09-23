@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "ethernalmod:hroz_ore",
+    "ethernalmod:moriut_ore",
+    "ethernalmod:targarit_ore",
+    "ethernalmod:trawitin_ore"
+  ]
+}

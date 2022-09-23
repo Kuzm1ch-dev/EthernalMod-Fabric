@@ -1,0 +1,14 @@
+{
+  "type": "ethernalmod:otherworldly_melter",
+  "ingredients": [
+    {
+      "item": "ethernalmod:targarit_ingot"
+    },
+    {
+      "item": "ethernalmod:filiot_ingot"
+    }
+  ],
+  "output": {
+    "item": "ethernalmod:tarfiliot_ingot"
+  }
+}

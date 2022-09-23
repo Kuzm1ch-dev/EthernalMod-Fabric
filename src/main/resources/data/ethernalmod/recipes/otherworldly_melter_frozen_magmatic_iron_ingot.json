@@ -1,0 +1,14 @@
+{
+  "type": "ethernalmod:otherworldly_melter",
+  "ingredients": [
+    {
+      "item": "ethernalmod:cold_iron_ingot"
+    },
+    {
+      "item": "minecraft:magma"
+    }
+  ],
+  "output": {
+    "item": "ethernalmod:frozen_magmatic_iron_ingot"
+  }
+}

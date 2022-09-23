@@ -4,6 +4,7 @@ import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.AliasedBlockItem;
 import net.minecraft.item.FoodComponent;
 import net.minecraft.item.Item;
+import net.minecraft.item.PickaxeItem;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import ru.kuzm1ch88.ethernalmod.EthernalMod;
@@ -128,6 +129,22 @@ public class ModItems {
 
     public static final Item RAW_COLD_IRON = registerItem("raw_cold_iron",
             new Item(new FabricItemSettings().group(ModItemsGroup.ETHERNAL_RESOURCE)));
+
+    // Tools
+
+        //PickAxe
+
+    public static final Item HROZ_PICKAXE = registerItem("hroz_pickaxe",
+            new PickaxeItem(ModToolMaterial.HROZ, (int) (ModToolMaterial.HROZ.getAttackDamage() - 2f),2f,
+                    new FabricItemSettings().group(ModItemsGroup.ETHERNAL_WEAPON).maxCount(1)));
+
+    public static final Item MORIUT_PICKAXE = registerItem("moriut_pickaxe",
+            new PickaxeItem(ModToolMaterial.MORIUT, (int) (ModToolMaterial.MORIUT.getAttackDamage() - 2f),2f,
+                    new FabricItemSettings().group(ModItemsGroup.ETHERNAL_WEAPON).maxCount(1)));
+
+    public static final Item TARGARIT_PICKAXE = registerItem("targarit_pickaxe",
+            new PickaxeItem(ModToolMaterial.TARGARIT, (int) (ModToolMaterial.TARGARIT.getAttackDamage() - 2f),2f,
+                    new FabricItemSettings().group(ModItemsGroup.ETHERNAL_WEAPON).maxCount(1)));
 
     private static Item registerItem(String name, Item item){
         return Registry.register(Registry.ITEM, new Identifier(EthernalMod.MOD_ID, name), item);

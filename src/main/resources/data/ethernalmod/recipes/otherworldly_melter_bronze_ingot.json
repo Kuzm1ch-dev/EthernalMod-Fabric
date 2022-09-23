@@ -1,0 +1,14 @@
+{
+  "type": "ethernalmod:otherworldly_melter",
+  "ingredients": [
+    {
+      "item": "ethernalmod:tin_ingot"
+    },
+    {
+      "item": "minecraft:copper_ingot"
+    }
+  ],
+  "output": {
+    "item": "ethernalmod:bronze_ingot"
+  }
+}

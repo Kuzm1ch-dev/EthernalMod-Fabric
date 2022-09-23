@@ -1,0 +1,14 @@
+{
+  "type": "ethernalmod:otherworldly_melter",
+  "ingredients": [
+    {
+      "item": "ethernalmod:erobi_ingot"
+    },
+    {
+      "item": "ethernalmod:moriut_ingot"
+    }
+  ],
+  "output": {
+    "item": "ethernalmod:morobi_ingot"
+  }
+}

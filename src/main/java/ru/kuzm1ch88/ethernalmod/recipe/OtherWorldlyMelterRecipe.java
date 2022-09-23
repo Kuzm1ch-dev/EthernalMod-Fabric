@@ -29,8 +29,7 @@ public class OtherWorldlyMelterRecipe implements Recipe<SimpleInventory> {
         if(world.isClient()) {
             return false;
         }
-
-        boolean match = recipeItems.get(0).test(inventory.getStack(0)) && recipeItems.get(1).test(inventory.getStack(1));
+        boolean match = (recipeItems.get(0).test(inventory.getStack(0)) && recipeItems.get(1).test(inventory.getStack(1)) || recipeItems.get(0).test(inventory.getStack(1)) && recipeItems.get(1).test(inventory.getStack(0)));
 
         return match;
     }
