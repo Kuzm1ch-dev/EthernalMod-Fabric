@@ -129,7 +129,6 @@ public class OtherworldlyMelterEntity extends BlockEntity implements NamedScreen
             return;
         }
 
-        /*
         ItemStack itemStack = (ItemStack)entity.inventory.get(3);
         boolean fuel = !itemStack.isEmpty();
 
@@ -141,7 +140,7 @@ public class OtherworldlyMelterEntity extends BlockEntity implements NamedScreen
             entity.burnTime = entity.getFuelTime(itemStack);
             entity.fuelTime = entity.burnTime;
             entity.removeStack(3, 1);
-        }*/
+        }
 
         if(hasRecipe(entity)) {
             entity.progress++;

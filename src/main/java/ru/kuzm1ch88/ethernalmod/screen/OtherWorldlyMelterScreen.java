@@ -38,13 +38,14 @@ public class OtherWorldlyMelterScreen extends HandledScreen<OtherWorldlyMelterSc
 
     private void renderProgressArrow(MatrixStack matrices, int x, int y) {
         if(handler.isCrafting()) {
-            drawTexture(matrices, x + 68, y + 20, 176, 0, 37, handler.getScaledProgress());
+            drawTexture(matrices, x + 67, y + 19, 176, 0, 36, handler.getScaledProgress());
         }
     }
 
     private void renderFuelArrow(MatrixStack matrices, int x, int y) {
         if(handler.isBurning()) {
-            drawTexture(matrices, x + 80, y + 13, 213, 0, 14, handler.getScaledFuel());
+            int scale = handler.getScaledFuel();
+            drawTexture(matrices, x + 85, y + 49 - scale + 14, 212, 0 - scale + 14, 15, handler.getScaledFuel()); // 14 is texture height
         }
     }
 

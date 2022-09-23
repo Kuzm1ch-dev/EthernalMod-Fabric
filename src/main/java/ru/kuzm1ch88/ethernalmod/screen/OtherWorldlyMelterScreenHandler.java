@@ -27,8 +27,8 @@ public class OtherWorldlyMelterScreenHandler extends ScreenHandler {
 
         this.addSlot(new Slot(inventory, 0, 51, 14));
         this.addSlot(new Slot(inventory, 1, 103, 14));
-        this.addSlot(new Slot(inventory, 2, 77, 60));
-        this.addSlot(new Slot(inventory, 3, 14, 14));
+        this.addSlot(new Slot(inventory, 2, 103, 38));
+        this.addSlot(new Slot(inventory, 3, 84, 64));
 
         addPlayerInventory(playerInventory);
         addPlayerHotbar(playerInventory);
@@ -46,7 +46,7 @@ public class OtherWorldlyMelterScreenHandler extends ScreenHandler {
     public int getScaledProgress() {
         int progress = this.propertyDelegate.get(0);
         int maxProgress = this.propertyDelegate.get(1);  // Max Progress
-        int progressArrowSize = 38; // This is the width in pixels of your arrow
+        int progressArrowSize = 31; // This is the width in pixels of your arrow
 
         return maxProgress != 0 && progress != 0 ? progress * progressArrowSize / maxProgress : 0;
     }
@@ -54,7 +54,7 @@ public class OtherWorldlyMelterScreenHandler extends ScreenHandler {
     public int getScaledFuel() {
         int progress = this.propertyDelegate.get(2);
         int maxProgress = this.propertyDelegate.get(3);
-        int fuelArrowSize = 15;
+        int fuelArrowSize = 14;
 
         return maxProgress != 0 && progress != 0 ? progress * fuelArrowSize / maxProgress : 0;
     }
