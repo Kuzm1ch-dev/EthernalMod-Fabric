@@ -33,11 +33,18 @@ public class OtherWorldlyMelterScreen extends HandledScreen<OtherWorldlyMelterSc
         drawTexture(matrices, x, y, 0, 0, backgroundWidth, backgroundHeight);
 
         renderProgressArrow(matrices, x, y);
+        renderFuelArrow(matrices, x, y);
     }
 
     private void renderProgressArrow(MatrixStack matrices, int x, int y) {
         if(handler.isCrafting()) {
-            drawTexture(matrices, x + 68, y + 20, 176, 0, 36, handler.getScaledProgress());
+            drawTexture(matrices, x + 68, y + 20, 176, 0, 37, handler.getScaledProgress());
+        }
+    }
+
+    private void renderFuelArrow(MatrixStack matrices, int x, int y) {
+        if(handler.isBurning()) {
+            drawTexture(matrices, x + 80, y + 13, 213, 0, 14, handler.getScaledFuel());
         }
     }
 

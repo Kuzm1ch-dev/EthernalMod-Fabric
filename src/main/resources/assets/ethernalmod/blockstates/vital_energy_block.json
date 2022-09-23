@@ -1,3 +1,5 @@
 {
-  "parent": "ethernalmod:block/vital_energy_block"
+  "variants": {
+    "": { "model": "ethernalmod:block/vital_energy_block" }
+  }
 }

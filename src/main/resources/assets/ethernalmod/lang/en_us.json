@@ -10,6 +10,10 @@
   "item.ethernalmod.raw_cold_iron": "Raw Cold Iron",
   "item.ethernalmod.raw_aumentit": "Raw Aumentit",
 
+  "item.ethernalmod.tarfiliot_ingot": "Tarfiliot Ingot",
+  "item.ethernalmod.morobi_ingot": "Morobi Ingot",
+  "item.ethernalmod.hrozifil_ingot": "Hrozifil Ingot",
+  "item.ethernalmod.frozen_magmatic_iron_ingot": "Frozen Magmatic Iron Ingot",
   "item.ethernalmod.cleomenis_ingot": "Cleomenis Ingot",
   "item.ethernalmod.erobi_ingot": "Erobi Ingot",
   "item.ethernalmod.filiot_ingot": "Filiot Ingot",
@@ -27,6 +31,8 @@
   "item.ethernalmod.golden_string": "Golden String",
   "item.ethernalmod.golden_fabric": "Golden Fabric",
 
+
+  "block.ethernalmod.vital_energy_block": "Vital Energy Block",
 
   "block.ethernalmod.bronze_block": "Bronze Block",
   "block.ethernalmod.tin_block": "Tin Block",

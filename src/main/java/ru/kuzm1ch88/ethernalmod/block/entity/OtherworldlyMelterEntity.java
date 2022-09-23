@@ -1,7 +1,8 @@
 package ru.kuzm1ch88.ethernalmod.block.entity;
 
-import net.minecraft.block.AbstractFurnaceBlock;
+import com.google.common.collect.Maps;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
@@ -9,6 +10,7 @@ import net.minecraft.inventory.Inventories;
 import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.screen.NamedScreenHandlerFactory;
 import net.minecraft.screen.PropertyDelegate;
@@ -16,20 +18,49 @@ import net.minecraft.screen.ScreenHandler;
 import net.minecraft.text.Text;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.registry.Registry;
+import net.minecraft.util.registry.RegistryEntry;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 import ru.kuzm1ch88.ethernalmod.block.custom.OtherworldlyMelter;
+import ru.kuzm1ch88.ethernalmod.item.ModItems;
 import ru.kuzm1ch88.ethernalmod.recipe.OtherWorldlyMelterRecipe;
 import ru.kuzm1ch88.ethernalmod.screen.OtherWorldlyMelterScreenHandler;
 
+import java.util.Map;
 import java.util.Optional;
 
 public class OtherworldlyMelterEntity extends BlockEntity implements NamedScreenHandlerFactory, ImplementedInventory{
-    private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(3, ItemStack.EMPTY);
+    private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(4, ItemStack.EMPTY);
 
     protected final PropertyDelegate propertyDelegate;
     private int progress = 0;
     private int maxProgress = 72;
+    int burnTime = 0;
+    int fuelTime = 0;
+
+    public static Map<Item, Integer> createFuelTimeMap() {
+        Map<Item, Integer> map = Maps.newLinkedHashMap();
+        addFuel(map, ModItems.ALATY_STONE, 100);
+        return map;
+    }
+
+    private static void addFuel(Map<Item, Integer> fuelTimes, Item item, int fuelTime) {
+            fuelTimes.put(item, fuelTime);
+    }
+
+    protected int getFuelTime(ItemStack fuel) {
+        if (fuel.isEmpty()) {
+            return 0;
+        } else {
+            Item item = fuel.getItem();
+            return (Integer)createFuelTimeMap().getOrDefault(item, 0);
+        }
+    }
+
+    private boolean isBurning() {
+        return this.burnTime > 0;
+    }
 
     public OtherworldlyMelterEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.OTHER_WORLDLY_MELTER, pos, state);
@@ -38,6 +69,8 @@ public class OtherworldlyMelterEntity extends BlockEntity implements NamedScreen
                 switch (index) {
                     case 0: return OtherworldlyMelterEntity.this.progress;
                     case 1: return OtherworldlyMelterEntity.this.maxProgress;
+                    case 2: return OtherworldlyMelterEntity.this.burnTime;
+                    case 3: return OtherworldlyMelterEntity.this.fuelTime;
                     default: return 0;
                 }
             }
@@ -46,11 +79,13 @@ public class OtherworldlyMelterEntity extends BlockEntity implements NamedScreen
                 switch(index) {
                     case 0: OtherworldlyMelterEntity.this.progress = value; break;
                     case 1: OtherworldlyMelterEntity.this.maxProgress = value; break;
+                    case 2: OtherworldlyMelterEntity.this.burnTime = value; break;
+                    case 3: OtherworldlyMelterEntity.this.fuelTime = value; break;
                 }
             }
 
             public int size() {
-                return 2;
+                return 4;
             }
         };
     }
@@ -93,6 +128,20 @@ public class OtherworldlyMelterEntity extends BlockEntity implements NamedScreen
         if(world.isClient()) {
             return;
         }
+
+        /*
+        ItemStack itemStack = (ItemStack)entity.inventory.get(3);
+        boolean fuel = !itemStack.isEmpty();
+
+        if (entity.isBurning()) {
+            --entity.burnTime;
+        }
+
+        if(hasRecipe(entity) && !entity.isBurning() && fuel) {
+            entity.burnTime = entity.getFuelTime(itemStack);
+            entity.fuelTime = entity.burnTime;
+            entity.removeStack(3, 1);
+        }*/
 
         if(hasRecipe(entity)) {
             entity.progress++;

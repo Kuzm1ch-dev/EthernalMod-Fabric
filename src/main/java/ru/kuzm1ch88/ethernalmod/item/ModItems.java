@@ -39,6 +39,18 @@ public class ModItems {
 
 
     // Ingot's
+    public static final Item TARFILIOT_INGOT = registerItem("tarfiliot_ingot",
+            new Item(new FabricItemSettings().group(ModItemsGroup.ETHERNAL_RESOURCE)));
+
+    public static final Item MOROBI_INGOT = registerItem("morobi_ingot",
+            new Item(new FabricItemSettings().group(ModItemsGroup.ETHERNAL_RESOURCE)));
+
+    public static final Item HROZIFIL_INGOT = registerItem("hrozifil_ingot",
+            new Item(new FabricItemSettings().group(ModItemsGroup.ETHERNAL_RESOURCE)));
+
+    public static final Item FROZEN_MAGMATIC_IRON_INGOT = registerItem("frozen_magmatic_iron_ingot",
+            new Item(new FabricItemSettings().group(ModItemsGroup.ETHERNAL_RESOURCE)));
+
     public static final Item CLEOMENIS_INGOT = registerItem("cleomenis_ingot",
             new Item(new FabricItemSettings().group(ModItemsGroup.ETHERNAL_RESOURCE)));
 

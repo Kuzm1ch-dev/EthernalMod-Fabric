@@ -15,12 +15,12 @@ public class OtherWorldlyMelterScreenHandler extends ScreenHandler {
     private final PropertyDelegate propertyDelegate;
 
     public OtherWorldlyMelterScreenHandler(int syncId, PlayerInventory inventory) {
-        this(syncId, inventory, new SimpleInventory(3), new ArrayPropertyDelegate(2));
+        this(syncId, inventory, new SimpleInventory(4), new ArrayPropertyDelegate(4));
     }
 
     public OtherWorldlyMelterScreenHandler(int syncId, PlayerInventory playerInventory, Inventory inventory, PropertyDelegate delegate) {
         super(ModScreenHandlers.OTHERWORLDLY_MELTER_SCREEN_HANDLER, syncId);
-        checkSize(inventory, 3);
+        checkSize(inventory, 4);
         this.inventory = inventory;
         inventory.onOpen(playerInventory.player);
         this.propertyDelegate = delegate;
@@ -28,6 +28,7 @@ public class OtherWorldlyMelterScreenHandler extends ScreenHandler {
         this.addSlot(new Slot(inventory, 0, 51, 14));
         this.addSlot(new Slot(inventory, 1, 103, 14));
         this.addSlot(new Slot(inventory, 2, 77, 60));
+        this.addSlot(new Slot(inventory, 3, 14, 14));
 
         addPlayerInventory(playerInventory);
         addPlayerHotbar(playerInventory);
@@ -38,6 +39,9 @@ public class OtherWorldlyMelterScreenHandler extends ScreenHandler {
     public boolean isCrafting() {
         return propertyDelegate.get(0) > 0;
     }
+    public boolean isBurning() {
+        return propertyDelegate.get(3) > 0;
+    }
 
     public int getScaledProgress() {
         int progress = this.propertyDelegate.get(0);
@@ -46,6 +50,15 @@ public class OtherWorldlyMelterScreenHandler extends ScreenHandler {
 
         return maxProgress != 0 && progress != 0 ? progress * progressArrowSize / maxProgress : 0;
     }
+
+    public int getScaledFuel() {
+        int progress = this.propertyDelegate.get(2);
+        int maxProgress = this.propertyDelegate.get(3);
+        int fuelArrowSize = 15;
+
+        return maxProgress != 0 && progress != 0 ? progress * fuelArrowSize / maxProgress : 0;
+    }
+
 
     @Override
     public ItemStack transferSlot(PlayerEntity player, int invSlot) {
