@@ -2,12 +2,20 @@
   "replace": false,
   "values": [
     "ethernalmod:tin_ore",
-    "ethernalmod:tin_block",
-    "ethernalmod:bronze_block",
     "ethernalmod:alaty_stone_ore",
-    "ethernalmod:alaty_stone_block",
     "ethernalmod:cold_iron_ore",
     "ethernalmod:aumentit_ore",
+    "ethernalmod:hroz_ore",
+    "ethernalmod:cleomenis_ore",
+    "ethernalmod:erobi_ore",
+    "ethernalmod:filiot_ore",
+    "ethernalmod:moriut_ore",
+    "ethernalmod:targarit_ore",
+    "ethernalmod:trawitin_ore",
+
+    "ethernalmod:bronze_block",
+    "ethernalmod:alaty_stone_block",
+    "ethernalmod:tin_block",
     "ethernalmod:cold_iron_block"
   ]
 }

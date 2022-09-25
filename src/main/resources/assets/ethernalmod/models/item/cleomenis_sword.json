@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/handheld",
   "textures": {
-    "layer0": "ethernalmod:item/moriut_pickaxe"
+    "layer0": "ethernalmod:item/cleomenis_sword"
   }
 }

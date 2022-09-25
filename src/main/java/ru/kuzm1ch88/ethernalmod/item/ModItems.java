@@ -1,10 +1,7 @@
 package ru.kuzm1ch88.ethernalmod.item;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.minecraft.item.AliasedBlockItem;
-import net.minecraft.item.FoodComponent;
-import net.minecraft.item.Item;
-import net.minecraft.item.PickaxeItem;
+import net.minecraft.item.*;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import ru.kuzm1ch88.ethernalmod.EthernalMod;
@@ -134,16 +131,102 @@ public class ModItems {
 
         //PickAxe
 
+    public static final Item BRONZE_PICKAXE = registerItem("bronze_pickaxe",
+            new PickaxeItem(ModToolMaterial.BRONZE, (int) (ModToolMaterial.BRONZE.getAttackDamage() / 2),2f,
+                    new FabricItemSettings().group(ModItemsGroup.ETHERNAL_WEAPON).maxCount(1)));
+
+    public static final Item EROBI_PICKAXE = registerItem("erobi_pickaxe",
+            new PickaxeItem(ModToolMaterial.EROBI, (int) (ModToolMaterial.EROBI.getAttackDamage() / 2),2f,
+                    new FabricItemSettings().group(ModItemsGroup.ETHERNAL_WEAPON).maxCount(1)));
+
     public static final Item HROZ_PICKAXE = registerItem("hroz_pickaxe",
-            new PickaxeItem(ModToolMaterial.HROZ, (int) (ModToolMaterial.HROZ.getAttackDamage() - 2f),2f,
+            new PickaxeItem(ModToolMaterial.HROZ, (int) (ModToolMaterial.HROZ.getAttackDamage() / 2),2f,
                     new FabricItemSettings().group(ModItemsGroup.ETHERNAL_WEAPON).maxCount(1)));
 
     public static final Item MORIUT_PICKAXE = registerItem("moriut_pickaxe",
-            new PickaxeItem(ModToolMaterial.MORIUT, (int) (ModToolMaterial.MORIUT.getAttackDamage() - 2f),2f,
+            new PickaxeItem(ModToolMaterial.MORIUT, (int) (ModToolMaterial.MORIUT.getAttackDamage() / 2),2f,
                     new FabricItemSettings().group(ModItemsGroup.ETHERNAL_WEAPON).maxCount(1)));
 
     public static final Item TARGARIT_PICKAXE = registerItem("targarit_pickaxe",
-            new PickaxeItem(ModToolMaterial.TARGARIT, (int) (ModToolMaterial.TARGARIT.getAttackDamage() - 2f),2f,
+            new PickaxeItem(ModToolMaterial.TARGARIT, (int) (ModToolMaterial.TARGARIT.getAttackDamage() / 2),2f,
+                    new FabricItemSettings().group(ModItemsGroup.ETHERNAL_WEAPON).maxCount(1)));
+
+    public static final Item TRAWITIN_PICKAXE = registerItem("trawitin_pickaxe",
+            new PickaxeItem(ModToolMaterial.TRAWITIN, (int) (ModToolMaterial.TRAWITIN.getAttackDamage() / 2),2f,
+                    new FabricItemSettings().group(ModItemsGroup.ETHERNAL_WEAPON).maxCount(1)));
+
+    public static final Item MOROBI_PICKAXE = registerItem("morobi_pickaxe",
+            new PickaxeItem(ModToolMaterial.MOROBI, (int) (ModToolMaterial.MOROBI.getAttackDamage() / 2),2f,
+                    new FabricItemSettings().group(ModItemsGroup.ETHERNAL_WEAPON).maxCount(1)));
+
+    public static final Item FILIOT_PICKAXE = registerItem("filiot_pickaxe",
+            new PickaxeItem(ModToolMaterial.FILIOT, (int) (ModToolMaterial.FILIOT.getAttackDamage() / 2),2f,
+                    new FabricItemSettings().group(ModItemsGroup.ETHERNAL_WEAPON).maxCount(1)));
+
+    public static final Item CLEOMENIS_PICKAXE = registerItem("cleomenis_pickaxe",
+            new PickaxeItem(ModToolMaterial.CLEOMENIS, (int) (ModToolMaterial.CLEOMENIS.getAttackDamage() / 2),2f,
+                    new FabricItemSettings().group(ModItemsGroup.ETHERNAL_WEAPON).maxCount(1)));
+
+    public static final Item COLD_IRON_PICKAXE = registerItem("cold_iron_pickaxe",
+            new PickaxeItem(ModToolMaterial.COLD_IRON, (int) (ModToolMaterial.COLD_IRON.getAttackDamage() / 2),2f,
+                    new FabricItemSettings().group(ModItemsGroup.ETHERNAL_WEAPON).maxCount(1)));
+
+    public static final Item HROZIFIL_PICKAXE = registerItem("hrozifil_pickaxe",
+            new PickaxeItem(ModToolMaterial.HROZIFIL, (int) (ModToolMaterial.HROZIFIL.getAttackDamage() / 2),2f,
+                    new FabricItemSettings().group(ModItemsGroup.ETHERNAL_WEAPON).maxCount(1)));
+
+    public static final Item TARFILIOT_PICKAXE = registerItem("tarfiliot_pickaxe",
+            new PickaxeItem(ModToolMaterial.TARFILIOT, (int) (ModToolMaterial.TARFILIOT.getAttackDamage() / 2),2f,
+                    new FabricItemSettings().group(ModItemsGroup.ETHERNAL_WEAPON).maxCount(1)));
+
+    public static final Item FROZEN_MAGMATIC_IRON_PICKAXE = registerItem("frozen_magmatic_iron_pickaxe",
+            new PickaxeItem(ModToolMaterial.FROZEN_MAGMATIC_IRON, (int) (ModToolMaterial.FROZEN_MAGMATIC_IRON.getAttackDamage() / 2),2f,
+                    new FabricItemSettings().group(ModItemsGroup.ETHERNAL_WEAPON).maxCount(1)));
+
+        // Sword
+
+    public static final Item BRONZE_SWORD = registerItem("bronze_sword",
+            new SwordItem(ModToolMaterial.BRONZE, (int) ModToolMaterial.BRONZE.getAttackDamage(),2.1f,
+                    new FabricItemSettings().group(ModItemsGroup.ETHERNAL_WEAPON).maxCount(1)));
+
+    public static final Item EROBI_SWORD = registerItem("erobi_sword",
+            new SwordItem(ModToolMaterial.EROBI, (int) ModToolMaterial.EROBI.getAttackDamage(),1.9f,
+                    new FabricItemSettings().group(ModItemsGroup.ETHERNAL_WEAPON).maxCount(1)));
+
+    public static final Item HROZ_SWORD = registerItem("hroz_sword",
+            new SwordItem(ModToolMaterial.HROZ, (int) ModToolMaterial.HROZ.getAttackDamage(),2f,
+                    new FabricItemSettings().group(ModItemsGroup.ETHERNAL_WEAPON).maxCount(1)));
+
+    public static final Item MORIUT_SWORD = registerItem("moriut_sword",
+            new SwordItem(ModToolMaterial.MORIUT, (int) ModToolMaterial.MORIUT.getAttackDamage(),2.2f,
+                    new FabricItemSettings().group(ModItemsGroup.ETHERNAL_WEAPON).maxCount(1)));
+
+    public static final Item TARGARIT_SWORD = registerItem("targarit_sword",
+            new SwordItem(ModToolMaterial.TARGARIT, (int) ModToolMaterial.TARGARIT.getAttackDamage(),1.8f,
+                    new FabricItemSettings().group(ModItemsGroup.ETHERNAL_WEAPON).maxCount(1)));
+
+    public static final Item TRAWITIN_SWORD = registerItem("trawitin_sword",
+            new SwordItem(ModToolMaterial.TRAWITIN, (int) ModToolMaterial.TRAWITIN.getAttackDamage(),4f,
+                    new FabricItemSettings().group(ModItemsGroup.ETHERNAL_WEAPON).maxCount(1)));
+
+    public static final Item MOROBI_SWORD = registerItem("morobi_sword",
+            new SwordItem(ModToolMaterial.MOROBI, (int) ModToolMaterial.MOROBI.getAttackDamage(),4f,
+                    new FabricItemSettings().group(ModItemsGroup.ETHERNAL_WEAPON).maxCount(1)));
+
+    public static final Item FILIOT_SWORD = registerItem("filiot_sword",
+            new SwordItem(ModToolMaterial.FILIOT, (int) ModToolMaterial.FILIOT.getAttackDamage(),3.1f,
+                    new FabricItemSettings().group(ModItemsGroup.ETHERNAL_WEAPON).maxCount(1)));
+
+    public static final Item CLEOMENIS_SWORD = registerItem("cleomenis_sword",
+            new SwordItem(ModToolMaterial.CLEOMENIS, (int) ModToolMaterial.CLEOMENIS.getAttackDamage(),2.7f,
+                    new FabricItemSettings().group(ModItemsGroup.ETHERNAL_WEAPON).maxCount(1)));
+
+    public static final Item COLD_IRON_SWORD = registerItem("cold_iron_sword",
+            new SwordItem(ModToolMaterial.COLD_IRON, (int) ModToolMaterial.COLD_IRON.getAttackDamage(),1.9f,
+                    new FabricItemSettings().group(ModItemsGroup.ETHERNAL_WEAPON).maxCount(1)));
+
+    public static final Item TARFILIOT_SWORD = registerItem("tarfiliot_sword",
+            new SwordItem(ModToolMaterial.TARFILIOT, (int) ModToolMaterial.TARFILIOT.getAttackDamage(),5.6f,
                     new FabricItemSettings().group(ModItemsGroup.ETHERNAL_WEAPON).maxCount(1)));
 
     private static Item registerItem(String name, Item item){

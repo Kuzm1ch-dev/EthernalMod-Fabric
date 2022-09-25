@@ -13,6 +13,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.minecraft.util.registry.Registry;
 import ru.kuzm1ch88.ethernalmod.EthernalMod;
+import ru.kuzm1ch88.ethernalmod.block.custom.ErobiAnvil;
 import ru.kuzm1ch88.ethernalmod.block.custom.OnionCrop;
 import ru.kuzm1ch88.ethernalmod.block.custom.OtherworldlyMelter;
 import ru.kuzm1ch88.ethernalmod.block.entity.ModBlockEntities;
@@ -79,8 +80,11 @@ public class ModBlocks {
             new Block(FabricBlockSettings.of(Material.WOOD).strength(1f).requiresTool()),ModItemsGroup.ETHERNAL_RESOURCE);
 
     public static Block OTHERWORLDLY_MELTER = registerBlock("other_worldly_melter",
-            new OtherworldlyMelter(FabricBlockSettings.of(Material.WOOD).strength(1f).requiresTool()),ModItemsGroup.ETHERNAL_RESOURCE);
+            new OtherworldlyMelter(FabricBlockSettings.of(Material.STONE).strength(1f).requiresTool()),ModItemsGroup.ETHERNAL_RESOURCE);
 
+
+    public static Block EROBI_ANVIL = registerBlock("erobi_anvil",
+            new ErobiAnvil(FabricBlockSettings.of(Material.STONE).strength(1f).requiresTool()),ModItemsGroup.ETHERNAL_RESOURCE);
     private static Block registerBlockWithoutItem(String name, Block block){
         return Registry.register(Registry.BLOCK, new Identifier(EthernalMod.MOD_ID, name), block);
     }

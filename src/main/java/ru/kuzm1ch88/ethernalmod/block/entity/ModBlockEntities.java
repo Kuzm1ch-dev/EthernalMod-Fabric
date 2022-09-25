@@ -9,11 +9,17 @@ import ru.kuzm1ch88.ethernalmod.block.ModBlocks;
 
 public class ModBlockEntities {
     public static BlockEntityType<OtherworldlyMelterEntity> OTHER_WORLDLY_MELTER;
+    public static BlockEntityType<ErobiAnvilEntity> EROBI_ANVIL;
 
     public static void registerBlockEntities() {
         OTHER_WORLDLY_MELTER = Registry.register(Registry.BLOCK_ENTITY_TYPE,
                 new Identifier(EthernalMod.MOD_ID, "other_worldly_melter"),
                 FabricBlockEntityTypeBuilder.create(OtherworldlyMelterEntity::new,
                         ModBlocks.OTHERWORLDLY_MELTER).build(null));
+
+       EROBI_ANVIL = Registry.register(Registry.BLOCK_ENTITY_TYPE,
+                new Identifier(EthernalMod.MOD_ID, "erobi_anvil"),
+                FabricBlockEntityTypeBuilder.create(ErobiAnvilEntity::new,
+                        ModBlocks.EROBI_ANVIL).build(null));
     }
 }

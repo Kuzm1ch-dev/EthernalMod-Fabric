@@ -113,6 +113,9 @@ public class OtherworldlyMelterEntity extends BlockEntity implements NamedScreen
         super.writeNbt(nbt);
         Inventories.writeNbt(nbt, inventory);
         nbt.putInt("other_worldly_melter.progress", progress);
+        nbt.putInt("other_worldly_melter.maxProgress", maxProgress);
+        nbt.putInt("other_worldly_melter.burnTime", burnTime);
+        nbt.putInt("other_worldly_melter.fuelTime", fuelTime);
     }
 
     @Override
@@ -120,6 +123,9 @@ public class OtherworldlyMelterEntity extends BlockEntity implements NamedScreen
         Inventories.readNbt(nbt, inventory);
         super.readNbt(nbt);
         progress = nbt.getInt("other_worldly_melter.progress");
+        maxProgress = nbt.getInt("other_worldly_melter.maxProgress");
+        burnTime = nbt.getInt("other_worldly_melter.burnTime");
+        fuelTime = nbt.getInt("other_worldly_melter.fuelTime");
     }
 
     private void resetProgress() {
