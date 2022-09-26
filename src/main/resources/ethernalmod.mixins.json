@@ -4,6 +4,7 @@
   "package": "ru.kuzm1ch88.ethernalmod.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "ModEntityDataSaverMixin"
   ],
   "client": [
     "EthernalMixin"

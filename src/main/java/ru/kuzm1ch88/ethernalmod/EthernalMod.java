@@ -5,7 +5,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import ru.kuzm1ch88.ethernalmod.block.ModBlocks;
 import ru.kuzm1ch88.ethernalmod.block.entity.ModBlockEntities;
+import ru.kuzm1ch88.ethernalmod.event.KeyInputHandler;
 import ru.kuzm1ch88.ethernalmod.item.ModItems;
+import ru.kuzm1ch88.ethernalmod.networking.ModMessages;
 import ru.kuzm1ch88.ethernalmod.painting.ModPaintings;
 import ru.kuzm1ch88.ethernalmod.recipe.ModRecipes;
 import ru.kuzm1ch88.ethernalmod.screen.ModScreenHandlers;
@@ -41,6 +43,10 @@ public class EthernalMod implements ModInitializer {
 		ModScreenHandlers.registerAllScreenHandlers();
 
 		ModRecipes.registerRecipes();
+
+		KeyInputHandler.registerKeyInputs();
+
+		ModMessages.registerC2SPackets();
 
 		LOGGER.info("Ethernal Mod!");
 	}

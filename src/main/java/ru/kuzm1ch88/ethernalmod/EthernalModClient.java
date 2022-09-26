@@ -10,6 +10,7 @@ import ru.kuzm1ch88.ethernalmod.block.ModBlocks;
 import ru.kuzm1ch88.ethernalmod.block.entity.ModBlockEntities;
 import ru.kuzm1ch88.ethernalmod.block.entity.client.ErobiAnvilEntityRenderer;
 import ru.kuzm1ch88.ethernalmod.event.KeyInputHandler;
+import ru.kuzm1ch88.ethernalmod.networking.ModMessages;
 import ru.kuzm1ch88.ethernalmod.screen.ModScreenHandlers;
 import ru.kuzm1ch88.ethernalmod.screen.OtherWorldlyMelterScreen;
 
@@ -19,6 +20,7 @@ public class EthernalModClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.ONION_CROP, RenderLayer.getCutout());
 
         KeyInputHandler.register();
+        ModMessages.registerS2CPackets();
 
         HandledScreens.register(ModScreenHandlers.OTHERWORLDLY_MELTER_SCREEN_HANDLER, OtherWorldlyMelterScreen::new);
 
