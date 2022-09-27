@@ -24,8 +24,7 @@ public class KeyInputHandler {
     public static void registerKeyInputs(){
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
             if(useItemKey.wasPressed()){
-                ClientPlayNetworking.send(ModMessages.EXAMPLE_ID, PacketByteBufs.create());
-                client.player.sendChatMessage("USE!", Text.translatable("USE!"));
+                ClientPlayNetworking.send(ModMessages.MANA_USE_ID, PacketByteBufs.create());
             }
         });
     }

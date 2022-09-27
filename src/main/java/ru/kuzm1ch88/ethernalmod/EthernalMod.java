@@ -1,11 +1,13 @@
 package ru.kuzm1ch88.ethernalmod;
 
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import ru.kuzm1ch88.ethernalmod.block.ModBlocks;
 import ru.kuzm1ch88.ethernalmod.block.entity.ModBlockEntities;
 import ru.kuzm1ch88.ethernalmod.event.KeyInputHandler;
+import ru.kuzm1ch88.ethernalmod.event.PlayerTickHandler;
 import ru.kuzm1ch88.ethernalmod.item.ModItems;
 import ru.kuzm1ch88.ethernalmod.networking.ModMessages;
 import ru.kuzm1ch88.ethernalmod.painting.ModPaintings;
@@ -47,6 +49,8 @@ public class EthernalMod implements ModInitializer {
 		KeyInputHandler.registerKeyInputs();
 
 		ModMessages.registerC2SPackets();
+
+		ServerTickEvents.START_SERVER_TICK.register(new PlayerTickHandler());
 
 		LOGGER.info("Ethernal Mod!");
 	}

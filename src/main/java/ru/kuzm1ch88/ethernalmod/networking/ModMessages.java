@@ -4,6 +4,7 @@ import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.util.Identifier;
 import ru.kuzm1ch88.ethernalmod.EthernalMod;
 import ru.kuzm1ch88.ethernalmod.networking.packets.ExampleC2SPacket;
+import ru.kuzm1ch88.ethernalmod.networking.packets.ManaUseC2SPacket;
 
 public class ModMessages {
         public static final Identifier MANA_USE_ID = new Identifier(EthernalMod.MOD_ID, "mana_use");
@@ -13,6 +14,7 @@ public class ModMessages {
 
         public static void registerC2SPackets(){
             ServerPlayNetworking.registerGlobalReceiver(EXAMPLE_ID, ExampleC2SPacket::receive);
+            ServerPlayNetworking.registerGlobalReceiver(MANA_USE_ID, ManaUseC2SPacket::receive);
         }
 
         public static void registerS2CPackets(){
