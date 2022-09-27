@@ -9,26 +9,28 @@ import net.minecraft.screen.ArrayPropertyDelegate;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.slot.Slot;
+import ru.kuzm1ch88.ethernalmod.item.ModItems;
 
 public class OtherWorldlyMelterScreenHandler extends ScreenHandler {
     private final Inventory inventory;
     private final PropertyDelegate propertyDelegate;
 
     public OtherWorldlyMelterScreenHandler(int syncId, PlayerInventory inventory) {
-        this(syncId, inventory, new SimpleInventory(4), new ArrayPropertyDelegate(4));
+        this(syncId, inventory, new SimpleInventory(5), new ArrayPropertyDelegate(4));
     }
 
     public OtherWorldlyMelterScreenHandler(int syncId, PlayerInventory playerInventory, Inventory inventory, PropertyDelegate delegate) {
         super(ModScreenHandlers.OTHERWORLDLY_MELTER_SCREEN_HANDLER, syncId);
-        checkSize(inventory, 4);
+        checkSize(inventory, 5);
         this.inventory = inventory;
         inventory.onOpen(playerInventory.player);
         this.propertyDelegate = delegate;
 
         this.addSlot(new Slot(inventory, 0, 51, 14));
         this.addSlot(new Slot(inventory, 1, 103, 14));
-        this.addSlot(new Slot(inventory, 2, 103, 38));
-        this.addSlot(new Slot(inventory, 3, 84, 64));
+        this.addSlot(new Slot(inventory, 2, 104, 39));
+        this.addSlot(new Slot(inventory, 3, 85, 65));
+        this.addSlot(new Slot(inventory, 4, 129, 39));
 
         addPlayerInventory(playerInventory);
         addPlayerHotbar(playerInventory);

@@ -30,9 +30,10 @@ import ru.kuzm1ch88.ethernalmod.screen.OtherWorldlyMelterScreenHandler;
 
 import java.util.Map;
 import java.util.Optional;
+import java.util.Random;
 
 public class OtherworldlyMelterEntity extends BlockEntity implements NamedScreenHandlerFactory, ImplementedInventory{
-    private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(4, ItemStack.EMPTY);
+    private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(5, ItemStack.EMPTY);
 
     protected final PropertyDelegate propertyDelegate;
     private int progress = 0;
@@ -62,6 +63,10 @@ public class OtherworldlyMelterEntity extends BlockEntity implements NamedScreen
 
     private boolean isBurning() {
         return this.burnTime > 0;
+    }
+
+    public boolean isFullSlag() {
+        return (inventory.get(4).getCount() >= 64) || (!inventory.get(4).isEmpty() && inventory.get(4).getItem() != ModItems.SLAG);
     }
 
     public OtherworldlyMelterEntity(BlockPos pos, BlockState state) {
@@ -151,12 +156,15 @@ public class OtherworldlyMelterEntity extends BlockEntity implements NamedScreen
         }
 
         if(hasRecipe(entity) && entity.isBurning()) {
-            entity.progress++;
-            state = (BlockState)state.with(OtherworldlyMelter.LIT, true);
-            world.setBlockState(blockPos, state, 3);
-            markDirty(world, blockPos, state);
-            if(entity.progress >= entity.maxProgress) {
-                craftItem(entity);
+            if (!entity.isFullSlag())
+            {
+                entity.progress++;
+                state = (BlockState)state.with(OtherworldlyMelter.LIT, true);
+                world.setBlockState(blockPos, state, 3);
+                markDirty(world, blockPos, state);
+                if(entity.progress >= entity.maxProgress) {
+                    craftItem(entity);
+                }
             }
         } else {
             entity.resetProgress();
@@ -178,6 +186,12 @@ public class OtherworldlyMelterEntity extends BlockEntity implements NamedScreen
         if(hasRecipe(entity)) {
             entity.removeStack(0, 1);
             entity.removeStack(1, 1);
+
+            Random random = new Random();
+            if (random.nextInt(10) == 1){
+                entity.setStack(4, new ItemStack(ModItems.SLAG,
+                        entity.getStack(4).getCount() + 1));
+            }
 
             entity.setStack(2, new ItemStack(recipe.get().getOutput().getItem(),
                     entity.getStack(2).getCount() + 1));

@@ -11,6 +11,11 @@ import ru.kuzm1ch88.ethernalmod.item.custom.HolyCross;
 
 public class ModItems {
 
+
+    //
+    public static final Item SLAG = registerItem("slag",
+            new Item(new FabricItemSettings().group(ModItemsGroup.ETHERNAL_RESOURCE)));
+
     //Artifacts
 
     public static final Item HOLY_BIBLE = registerItem("holy_bible",
@@ -20,6 +25,12 @@ public class ModItems {
             new HolyCross(new FabricItemSettings().group(ModItemsGroup.ETHERNAL_ARTIFACT).maxCount(1)));
 
     //Food's
+
+    public static final Item FRUIT_OF_FLESH = registerItem("fruit_of_flesh",
+            new Item(new FabricItemSettings().group(ModItemsGroup.ETHERNAL_FOOD).food(ModFoodComponents.FRUIT_OF_FLESH)));
+
+    public static final Item HEART_FRUIT = registerItem("heart_fruit",
+            new Item(new FabricItemSettings().group(ModItemsGroup.ETHERNAL_FOOD).food(ModFoodComponents.HEART_FRUIT)));
 
     public static final Item RADISH = registerItem("radish",
             new Item(new FabricItemSettings().group(ModItemsGroup.ETHERNAL_FOOD).food(ModFoodComponents.RADISH)));

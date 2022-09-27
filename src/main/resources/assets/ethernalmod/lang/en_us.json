@@ -1,4 +1,7 @@
 {
+  "item.ethernalmod.slag": "Slag",
+
+
   "item.ethernalmod.raw_trawitin": "Raw Trawitin",
   "item.ethernalmod.raw_targarit": "Raw Targarit",
   "item.ethernalmod.raw_cleomenis": "Raw Cleomenis",
@@ -52,6 +55,7 @@
   "block.ethernalmod.cold_iron_ore": "Cold Iron Ore",
 
   "item.ethernalmod.piece_of_cheese": "Piece Of Cheese",
+  "item.ethernalmod.heart_fruit": "Heart Fruit",
   "item.ethernalmod.garlic": "Garlic",
   "item.ethernalmod.onion": "Onion",
   "item.ethernalmod.radish": "Radish",
