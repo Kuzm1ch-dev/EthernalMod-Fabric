@@ -14,6 +14,8 @@ import net.minecraft.client.render.item.ItemRenderer;
 import net.minecraft.client.render.model.json.ModelTransformation;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
+import net.minecraft.text.Text;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3f;
 import net.minecraft.world.LightType;
@@ -31,22 +33,22 @@ public class ErobiAnvilEntityRenderer implements BlockEntityRenderer<ErobiAnvilE
                        VertexConsumerProvider vertexConsumers, int light, int overlay) {
         ItemRenderer itemRenderer = MinecraftClient.getInstance().getItemRenderer();
 
-        ItemStack itemStack = entity.getRenderStack();
-        matrices.push();
-        matrices.translate(0.5f,1f,0.5f);
-        matrices.scale(1f,1f,1f);
-        matrices.multiply(Vec3f.POSITIVE_X.getDegreesQuaternion(-90));
+        ItemStack itemStack = ErobiAnvilEntity.getRenderStack(entity);
+        MinecraftClient.getInstance().player.sendMessage(Text.literal(itemStack.toString()));
 
+        matrices.push();
+        matrices.translate(0.5f, 0.7f, 0.5f);
+        matrices.scale(0.2f, 0.2f, 0.2f);
+        matrices.multiply(Vec3f.POSITIVE_X.getDegreesQuaternion(-90));
 
         itemRenderer.renderItem(itemStack, ModelTransformation.Mode.GUI, getLightLevel(entity.getWorld(), entity.getPos()),
                 OverlayTexture.DEFAULT_UV, matrices, vertexConsumers, 1);
-
         matrices.pop();
     }
 
-    private int getLightLevel(World world, BlockPos pos){
+    private int getLightLevel(World world, BlockPos pos) {
         int bLight = world.getLightLevel(LightType.BLOCK, pos);
         int sLight = world.getLightLevel(LightType.SKY, pos);
-        return LightmapTextureManager.pack(bLight,sLight);
+        return LightmapTextureManager.pack(bLight, sLight);
     }
 }

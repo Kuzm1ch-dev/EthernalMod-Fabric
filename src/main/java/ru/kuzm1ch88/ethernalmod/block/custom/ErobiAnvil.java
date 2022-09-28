@@ -5,6 +5,7 @@ import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;
 import net.minecraft.block.entity.BlockEntityType;
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemPlacementContext;
@@ -14,21 +15,40 @@ import net.minecraft.state.StateManager;
 import net.minecraft.state.property.DirectionProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.state.property.Property;
+import net.minecraft.text.Text;
 import net.minecraft.util.*;
+import net.minecraft.util.function.BooleanBiFunction;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
+import net.minecraft.util.shape.VoxelShape;
+import net.minecraft.util.shape.VoxelShapes;
+import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 import ru.kuzm1ch88.ethernalmod.EthernalMod;
 import ru.kuzm1ch88.ethernalmod.block.entity.ErobiAnvilEntity;
 import ru.kuzm1ch88.ethernalmod.block.entity.ModBlockEntities;
 
+import java.util.stream.Stream;
+
 public class ErobiAnvil extends BlockWithEntity implements BlockEntityProvider {
 
     public static final DirectionProperty FACING = Properties.HORIZONTAL_FACING;
+    private static VoxelShape SHAPE = Stream.of(
+            Block.createCuboidShape(13, 9, 5, 15, 11, 11),
+            Block.createCuboidShape(3, 0, 5, 13, 2, 11),
+            Block.createCuboidShape(5, 2, 6, 11, 8, 10),
+            Block.createCuboidShape(3, 8, 4, 13, 11, 12),
+            Block.createCuboidShape(0, 9, 6, 3, 11, 10)
+    ).reduce((v1, v2) -> VoxelShapes.combineAndSimplify(v1, v2, BooleanBiFunction.OR)).get();
     public ErobiAnvil(Settings settings) {
         super(settings);
+    }
+
+    @Override
+    public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
+        return SHAPE;
     }
 
     @Nullable
@@ -84,7 +104,7 @@ public class ErobiAnvil extends BlockWithEntity implements BlockEntityProvider {
         ErobiAnvilEntity blockEntity = (ErobiAnvilEntity) world.getBlockEntity(pos);
         ItemStack itemStack = player.getStackInHand(hand);
 
-        if(blockEntity.getItems().get(0).isEmpty())//Если наковальня пустая
+        if(blockEntity.getStack(0).isEmpty())//Если наковальня пустая
         {
             blockEntity.setStack(0, new ItemStack(itemStack.getItem(), 1));
             if (!player.getAbilities().creativeMode) {

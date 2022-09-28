@@ -1,7 +1,11 @@
 package ru.kuzm1ch88.ethernalmod.block.entity;
 
+import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
+import net.fabricmc.fabric.api.networking.v1.PlayerLookup;
+import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventories;
@@ -9,14 +13,18 @@ import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.network.PacketByteBuf;
 import net.minecraft.screen.NamedScreenHandlerFactory;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
+import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.text.Text;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
+import ru.kuzm1ch88.ethernalmod.networking.ModMessages;
 import ru.kuzm1ch88.ethernalmod.recipe.OtherWorldlyMelterRecipe;
 
 import java.util.Optional;
@@ -28,10 +36,29 @@ public class ErobiAnvilEntity extends BlockEntity implements ImplementedInventor
     private int progress = 0;
     private int maxProgress = 4;
 
-
-    public ItemStack getRenderStack(){
-        return this.getStack(0);
+    public static ItemStack getRenderStack(ErobiAnvilEntity entity) {
+        return entity.getStack(0);
     }
+
+
+    @Override
+    public void markDirty() {
+        if(!world.isClient()) {
+            PacketByteBuf data = PacketByteBufs.create();
+            data.writeInt(inventory.size());
+            for(int i = 0; i < inventory.size(); i++) {
+                data.writeItemStack(inventory.get(i));
+            }
+            data.writeBlockPos(getPos());
+
+            for (ServerPlayerEntity player : PlayerLookup.tracking((ServerWorld) world, getPos())) {
+                ServerPlayNetworking.send(player, ModMessages.ITEM_SYNC, data);
+            }
+        }
+
+        super.markDirty();
+    }
+
 
     public ErobiAnvilEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.EROBI_ANVIL, pos, state);
@@ -62,6 +89,7 @@ public class ErobiAnvilEntity extends BlockEntity implements ImplementedInventor
         return this.inventory;
     }
 
+
     @Override
     protected void writeNbt(NbtCompound nbt) {
         super.writeNbt(nbt);
@@ -84,6 +112,7 @@ public class ErobiAnvilEntity extends BlockEntity implements ImplementedInventor
         if(world.isClient()) {
             return;
         }
+        markDirty(world, blockPos, state);
     }
 
     private static void craftItem(ErobiAnvilEntity entity) {
@@ -125,5 +154,11 @@ public class ErobiAnvilEntity extends BlockEntity implements ImplementedInventor
 
     private static boolean canInsertAmountIntoOutputSlot(SimpleInventory inventory) {
         return inventory.getStack(2).getMaxCount() > inventory.getStack(2).getCount();
+    }
+
+    public void setInventory(DefaultedList<ItemStack> inventory) {
+        for (int i = 0; i < inventory.size(); i++) {
+            this.inventory.set(i, inventory.get(i));
+        }
     }
 }

@@ -17,7 +17,7 @@ public class PlayerTickHandler implements ServerTickEvents.StartTick{
             if (new Random().nextFloat() <= 0.05f){
                 IEntityDataSaver dataPlayer = ((IEntityDataSaver) player);
                 ManaData.addMana(dataPlayer, 1);
-                player.sendMessage(Text.literal("Mana restore!"));
+                player.sendMessage(Text.literal("Mana restore! " + ManaData.getMana(dataPlayer)));
             }
         }
     }

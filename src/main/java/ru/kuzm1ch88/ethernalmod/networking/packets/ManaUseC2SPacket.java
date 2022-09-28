@@ -23,6 +23,8 @@ public class ManaUseC2SPacket {
                 0.5f, world.random.nextFloat() * 0.1f + 0.9f);
         ManaData.removeMana((IEntityDataSaver) player, 1);
 
-        player.sendMessage(Text.literal("Mana:" + ((IEntityDataSaver)player).getPersistentData().getInt("Mana")));
+        player.sendMessage(Text.literal("Mana:" + ((IEntityDataSaver)player).getPersistentData().getInt("mana")));
+
+        ManaData.syncMana(((IEntityDataSaver) player).getPersistentData().getInt("mana"), player);
     }
 }
